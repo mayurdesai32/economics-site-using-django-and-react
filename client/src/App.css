@@ -15,3 +15,15 @@ main {
 .rating span {
   margin: 0.1rem;
 } */
+
+/* loading */
+.loading {
+  height: 200px !important;
+  border-width: 15px !important;
+  /* border-color: darkgreen !important; */
+  width: 200px !important;
+  margin: auto !important;
+
+  margin-top: 20vh !important;
+  display: block !important;
+}
