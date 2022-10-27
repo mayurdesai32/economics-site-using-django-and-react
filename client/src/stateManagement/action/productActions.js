@@ -18,8 +18,8 @@ export const productList = () => async (dispatch) => {
     dispatch({
       type: PRODUCT_LIST_FAIL,
       payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
+        error.response && error.response.data.detail
+          ? error.response.data.detail
           : error.response,
     });
   }
@@ -28,14 +28,14 @@ export const productList = () => async (dispatch) => {
 export const productDetail = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAIL_REQUEST });
-    const response = await axios.get(`/api/product/${id}`);
+    const response = await axios.get(`/api/products/${id}`);
     dispatch({ type: PRODUCT_DETAIL_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAIL_FAIL,
       payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
+        error.response && error.response.data.detail
+          ? error.response.data.detail
           : error.response,
     });
   }
